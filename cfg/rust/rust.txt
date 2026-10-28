@@ -38,7 +38,7 @@ effects.maxgibs -1                                                  // yapi parc
 client.headlerp 10000                                               // "alt" hizli kafa cevirme
 player.autocrouch true                                              // yarim duvar oto egilme
 lookattooltip.crosshairmode 1                                       // etkilesim simge (0-1-2)
-graphics.impostorshadows false				            // agac arkasi golge kaldirma
+graphics.impostorshadows false                                      // agac arkasi golge kaldirma
 inventory.quickcraft_button_delay 0                                 // craft gecikme kapatma
 graphics.branding false                                             // surum yazisi kaldirma
 graphics.vm_fov_scale false                                         // viewmodel (silahi uzak tutma)
