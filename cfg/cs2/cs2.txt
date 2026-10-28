@@ -1,0 +1,142 @@
+//start code
+//+exec cs2_config.cfg -language english
+
+//donk cross
+//CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH
+
+//wicadia cross
+//CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ
+
+//unbinds
+unbind "mouse1"
+unbind "1"
+unbind "2"
+unbind "3"
+unbind "4"
+unbind "5"
+unbind "6"
+unbind "7"
+unbind "8"
+unbind "9"
+unbind "0"
+unbind "w"
+unbind "s"
+unbind "d"
+unbind "a"
+unbind "q"
+unbind "g"
+unbind "c"
+unbind "h"
+unbind "p"
+unbind "f"
+unbind "z"
+unbind "x"
+unbind "v"
+unbind "k"
+unbind "o"
+unbind "l"
+unbind "j"
+unbind "]"
+unbind "/"
+unbind ";"
+unbind "pgup"
+unbind "shift"
+unbind "ctrl"
+unbind "space"
+unbind "mwheelup"
+unbind "mwheeldown"
+unbind "mouse5"
+
+//main binds
+bind "mouse1" "+attack"
+bind "q" "lastinv"
+bind "1" "slot1"
+bind "2" "slot2"
+bind "3" "slot3"
+bind "5" "slot5"
+bind "w" "+forward"
+bind "s" "+back"
+bind "d" "+right"
+bind "a" "+left"
+bind "shift" "+sprint"
+bind "ctrl" "+duck" 
+bind "space" "+jump"
+bind "mwheelup" "invprev"
+bind "mwheeldown" "+jump"
+
+//keys binds
+bind ";" +turnright -turnright
+bind "t" "+spray_menu"
+bind "k" "slot12" //medic for dm
+bind "4" "player_ping"
+bind "g" "drop"
+bind "mouse5" "+lookatweapon"
+bind "/" "radio"
+bind "x" "toggle cl_radar_scale 1 0.3; toggle cl_radar_square_always 0 1;"
+
+//utility binds
+bind "f" "slot7" //flashbang
+bind "v" "slot8" //smoke
+bind "z" "slot6" //grenade
+bind "c" "slot10" //molotov
+bind "]" "slot9" //decoy
+
+//buys binds
+bind "6" "buy vesthelm; buy rifle0;"
+bind "0" "buy awp; buy vesthelm;"
+bind "7" "buy vesthelm; buy deagle;"
+bind "8" "buy mp9; buy mac10; buy vesthelm;"
+bind "9" "buy galilar; buy famas; buy vesthelm;"
+bind "-" "buy flashbang; buy smokegrenade; buy molotov; buy hegrenade; buy defuser;"
+bind "=" "buy flashbang; buy smokegrenade; buy hegrenade; buy flashbang;"
+bind "backspace" "sellbackall"
+
+//sensitivity
+sensitivity 1.8
+zoom_sensitivity_ratio 1.25
+
+//crosshair switch bind
+bind "p" "crosshairswitch"
+alias crosshairswitch donk
+alias donk "cl_crosshairstyle 4; cl_crosshair_recoil 0; cl_crosshairdot 0; cl_crosshair_length 3; cl_crosshair_thickness 3; cl_crosshair_gap 1; cl_crosshair_drawoutline 0; cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255; cl_crosshairalpha 255; cl_crosshair_t 0; alias crosshairswitch wicadia"
+alias wicadia "cl_crosshairstyle 4; cl_crosshair_recoil 0; cl_crosshairdot 0; cl_crosshair_length 5; cl_crosshair_thickness 1; cl_crosshair_gap 3; cl_crosshair_drawoutline 0; cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 0; cl_crosshairalpha 255; cl_crosshair_t 0; alias crosshairswitch donk"
+
+//radar
+cl_radar_rotate true
+cl_radar_always_centered false
+cl_radar_scale_dynamic false
+cl_radar_square_always true
+cl_radar_icon_scale_min 0.6
+cl_hud_radar_scale 1
+cl_radar_scale 0.3
+
+//viewmodel & hud
+viewmodel_fov 68
+viewmodel_offset_x 2
+viewmodel_offset_y 1.5
+viewmodel_offset_z -2
+viewmodel_presetpos 0
+r_drawtracers_firstperson true
+cl_hud_color 5
+
+//performance & optimization
+fps_max 400
+fps_max_ui 120
+cl_net_buffer_ticks 0
+cl_showfps 0
+cl_teamid_overhead_mode 3
+cl_teamid_overhead_fade_near_crosshair 1
+cl_debounce_zoom 0  
+snd_mixahead 0.01
+r_show_build_info false
+cl_predict_head_shot_fx false
+cl_predict_body_shot_fx false
+engine_low_latency_sleep_after_client_tick true
+
+host_writeconfig
+
+//practice
+//bot_stop
+//sv_rethrow_last_grenade
+//bot_place
+//noclip

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Config - Minus Settings</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .no-edit {
+            user-select: text;
+            -webkit-user-select: text;
+        }
+    </style>
+</head>
+<body class="bg-[#07050d] text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 selection:bg-purple-600 selection:text-white">
+
+    <!-- Container -->
+    <div class="w-full max-w-3xl bg-[#120e26] border border-purple-900/50 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.15)] overflow-hidden flex flex-col max-h-[90vh]">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-purple-900/40 bg-[#0c0919]">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-300 hover:text-white transition duration-200 flex items-center gap-1 text-xs font-semibold bg-purple-950/60 px-3 py-1.5 rounded-lg border border-purple-800/50">
+                    &larr; Go Back
+                </a>
+                <h1 class="text-base font-bold text-white uppercase tracking-wider">CS2 Config</h1>
+            </div>
+            
+            <!-- Copy Button -->
+            <button onclick="copyConfigContent()" class="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/40 hover:border-purple-400 text-xs font-semibold px-3.5 py-1.5 rounded-lg transition duration-200 flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span id="copyBtnText">Copy</span>
+            </button>
+        </div>
+
+        <!-- Code Content Area -->
+        <div class="p-6 overflow-y-auto font-mono text-xs text-purple-200/90 bg-[#050308] no-edit flex-grow">
+            <pre><code id="configText" class="whitespace-pre-wrap break-words">Loading config file...</code></pre>
+        </div>
+
+    </div>
+
+    <!-- Script to Load Config File Dynamically -->
+    <script>
+        // Automatically runs when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadConfigFile('cfg/cs2/cs2.txt'); // Path to your CS2 config file
+        });
+
+        // Function to fetch and render the config file
+        async function loadConfigFile(filePath) {
+            const configElement = document.getElementById('configText');
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error('File not found!');
+                }
+                const text = await response.text();
+                configElement.textContent = text;
+            } catch (error) {
+                configElement.textContent = `// Failed to read config file or invalid file path!\n// Searched path: ${filePath}`;
+            }
+        }
+
+        // Copy to Clipboard Function
+        function copyConfigContent() {
+            const content = document.getElementById('configText').textContent;
+            const copyBtnText = document.getElementById('copyBtnText');
+
+            navigator.clipboard.writeText(content).then(() => {
+                copyBtnText.textContent = "Copied!";
+                setTimeout(() => {
+                    copyBtnText.textContent = "Copy";
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
