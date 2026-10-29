@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minus Settings | CS2, Rust & War Thunder Config Archive</title>
+    <title>Minus Settings | Config Archive</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -105,42 +105,42 @@
             <div class="grid grid-cols-3 sm:grid-cols-6 gap-3">
                 
                 <!-- Item 1 -->
-                <div class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                <div onclick="openModal('assets/inventory/item1_big.png', 'Budapest 2025 Silver Coin')" class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                     <div class="w-16 h-16 flex items-center justify-center mb-1">
                         <img src="assets/inventory/item1.png" alt="Item 1" class="w-full h-full object-contain group-hover:scale-105 transition">
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                <div onclick="openModal('assets/inventory/item2_big.png', 'M4A1-S | Vaporwave')" class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                     <div class="w-16 h-16 flex items-center justify-center mb-1">
                         <img src="assets/inventory/item2.png" alt="Item 2" class="w-full h-full object-contain group-hover:scale-105 transition">
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                <div onclick="openModal('assets/inventory/item3_big.png', 'AK-47 | Neon Rider')" class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                     <div class="w-16 h-16 flex items-center justify-center mb-1">
                         <img src="assets/inventory/item3.png" alt="Item 3" class="w-full h-full object-contain group-hover:scale-105 transition">
                     </div>
                 </div>
 
                 <!-- Item 4 -->
-                <div class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                <div onclick="openModal('assets/inventory/item4_big.png', 'AWP | Chromatic Aberration')" class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                     <div class="w-16 h-16 flex items-center justify-center mb-1">
                         <img src="assets/inventory/item4.png" alt="Item 4" class="w-full h-full object-contain group-hover:scale-105 transition">
                     </div>
                 </div>
 
                 <!-- Item 5 -->
-                <div class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                <div onclick="openModal('assets/inventory/item5_big.png', 'M4A4 | Neo-Noir')" class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                     <div class="w-16 h-16 flex items-center justify-center mb-1">
                         <img src="assets/inventory/item5.png" alt="Item 5" class="w-full h-full object-contain group-hover:scale-105 transition">
                     </div>
                 </div>
 
                 <!-- Item 6 -->
-                <div class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                <div onclick="openModal('assets/inventory/item6_big.png', 'Austin 2025 Silver Coin')" class="bg-[#080612] border border-purple-900/50 hover:border-purple-500/80 rounded-xl p-2 flex flex-col items-center transition duration-200 group cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                     <div class="w-16 h-16 flex items-center justify-center mb-1">
                         <img src="assets/inventory/item6.png" alt="Item 6" class="w-full h-full object-contain group-hover:scale-105 transition">
                     </div>
@@ -210,6 +210,43 @@
     <footer class="bg-[#0b0818] border-t border-purple-900/40 py-6 text-center text-xs text-purple-400/60">
         &copy; 2026 minus-settings.com — All rights reserved.
     </footer>
+
+    <!-- Large Image Preview Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+        <div class="relative max-w-md w-full p-6 bg-[#080612] border border-purple-500/50 rounded-2xl shadow-2xl flex flex-col items-center">
+            <!-- Close Button (X) -->
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white bg-purple-950/50 hover:bg-purple-900 w-9 h-9 rounded-full flex items-center justify-center transition">
+                ✕
+            </button>
+            <!-- Optimized Image Preview Size -->
+            <img id="modalImage" src="" alt="Large Item Preview" class="max-h-[60vh] w-full max-w-xs object-contain rounded-lg mb-4">
+            <!-- Item Name / Caption -->
+            <p id="modalCaption" class="text-purple-300 font-medium text-base"></p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc, captionText) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+
+            modalImg.src = imageSrc;
+            modalCaption.textContent = captionText;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+        }
+
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
